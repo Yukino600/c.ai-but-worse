@@ -1,0 +1,82 @@
+/* Chat window container */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Placeholder when no chat is selected */
+.chat-window-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  background-color: var(--bg-secondary);
+}
+
+/* Messages area */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual message bubble */
+.message {
+  max-width: 60%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* Sent by other user */
+.message.other {
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border: 1px solid var(--glass-border);
+}
+
+/* Sent by current user */
+.message.me {
+  background-color: var(--primary-500);
+  color: var(--text-primary);
+  align-self: flex-end;
+}
+
+/* AI messages (Itsuki Nakano) */
+.message.ai {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  color: #333;
+  align-self: flex-start;
+  border: 2px solid #ff6b9d;
+  box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
+  position: relative;
+}
+
+.message.ai::before {
+  content: "🍰";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 0.8rem;
+  border: 2px solid #ff6b9d;
+}
+
+.message-sender {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #ff1744;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
